@@ -20,7 +20,7 @@
     </TextView>
 
     <View
-        android:id="@+id/colorView"
+        android:id="@+id/color_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -34,7 +34,7 @@
         android:layout_marginTop="20dp">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/redSwitch"
+            android:id="@+id/red_switch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             app:track="@drawable/track"/>
 
         <SeekBar
-            android:id="@+id/redSeekBar"
+            android:id="@+id/red_seekBar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
@@ -53,7 +53,7 @@
             android:thumbTint="@color/red" />
 
         <EditText
-            android:id="@+id/redEditTextNumberDecimal"
+            android:id="@+id/red_editTextNumberDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -68,7 +68,7 @@
         android:layout_marginTop="20dp">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/greenSwitch"
+            android:id="@+id/green_switch"
             android:layout_width="0dp"
             android:layout_marginEnd="10dp"
             android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             app:track="@drawable/track"/>
 
         <SeekBar
-            android:id="@+id/seekBar2"
+            android:id="@+id/green_seekBar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
@@ -87,7 +87,7 @@
             android:thumbTint="@color/green" />
 
         <EditText
-            android:id="@+id/greenEditTextNumberDecimal"
+            android:id="@+id/green_editTextNumberDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -102,7 +102,7 @@
         android:layout_marginTop="20dp">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/blueSwitch"
+            android:id="@+id/blue_switch"
             android:layout_width="0dp"
             android:layout_marginEnd="10dp"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             app:track="@drawable/track"/>
 
         <SeekBar
-            android:id="@+id/seekBar3"
+            android:id="@+id/blue_seekBar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
@@ -121,7 +121,7 @@
             android:thumbTint="@color/blue" />
 
         <EditText
-            android:id="@+id/blueEditTextNumberDecimal"
+            android:id="@+id/blue_editTextNumberDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -130,7 +130,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
