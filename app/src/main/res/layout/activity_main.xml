@@ -58,7 +58,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:autofillHints="0.00"
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <LinearLayout
@@ -92,7 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:autofillHints="0.00"
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,7 +130,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:autofillHints="0.00"
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <Button

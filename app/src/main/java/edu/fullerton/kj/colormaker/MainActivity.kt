@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         connectViewPointers()
+        resetButtonCallback()
     }
 
     private fun connectViewPointers() {
@@ -36,5 +37,22 @@ class MainActivity : AppCompatActivity() {
         blueSwitch = this.findViewById(R.id.blue_switch)
         blueSeekBar = this.findViewById(R.id.blue_seekBar)
         blueEditText = this.findViewById(R.id.blue_editTextNumberDecimal)
+    }
+
+    private fun resetButtonCallback() {
+        resetButton.setOnClickListener {
+            if(redSwitch.isChecked)
+                redSwitch.toggle()
+            if(greenSwitch.isChecked)
+                greenSwitch.toggle()
+            if(blueSwitch.isChecked)
+                blueSwitch.toggle()
+            redSeekBar.progress = 0
+            greenSeekBar.progress = 0
+            blueSeekBar.progress = 0
+            redEditText.setText("")
+            greenEditText.setText("")
+            blueEditText.setText("")
+        }
     }
 }
