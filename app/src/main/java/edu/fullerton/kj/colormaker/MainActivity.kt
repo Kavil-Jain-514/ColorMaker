@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.widget.SwitchCompat
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         connectViewPointers()
         resetButtonCallback()
+        redSwitchCallback()
+        blueSwitchCallback()
+        greenSwitchCallback()
     }
 
     private fun connectViewPointers() {
@@ -53,6 +57,42 @@ class MainActivity : AppCompatActivity() {
             redEditText.setText("")
             greenEditText.setText("")
             blueEditText.setText("")
+        }
+    }
+
+    private fun redSwitchCallback() {
+        redSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked) {
+                redSeekBar.isEnabled = true
+                redEditText.isEnabled = true
+            } else {
+                redSeekBar.isEnabled = false
+                redEditText.isEnabled = false
+            }
+        }
+    }
+
+    private fun greenSwitchCallback() {
+        greenSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked) {
+                greenSeekBar.isEnabled = true
+                greenEditText.isEnabled = true
+            } else {
+                greenSeekBar.isEnabled = false
+                greenEditText.isEnabled = false
+            }
+        }
+    }
+
+    private fun blueSwitchCallback() {
+        blueSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked) {
+                blueSeekBar.isEnabled = true
+                blueEditText.isEnabled = true
+            } else {
+                blueSeekBar.isEnabled = false
+                blueEditText.isEnabled = false
+            }
         }
     }
 }
