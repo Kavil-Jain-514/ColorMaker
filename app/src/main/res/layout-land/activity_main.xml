@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/header"
         android:textAlignment="center"
-        android:textSize="@dimen/header_text"/>
+        android:textSize="20sp"/>
 
     <View
         android:id="@+id/color_view"
@@ -59,12 +59,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:autofillHints="0.00"
             android:ems="10"
-            android:hint="@fraction/edit_text_hint"
-            android:textSize="20sp"
             android:inputType="numberDecimal"
-            tools:ignore="LabelFor"
-            android:autofillHints="Enter the values e.g 0.45" />
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,12 +98,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@fraction/edit_text_hint"
+            android:autofillHints="0.00"
             android:ems="10"
-            android:textSize="20sp"
             android:inputType="numberDecimal"
-            tools:ignore="LabelFor"
-            android:autofillHints="Enter the values e.g 0.45" />
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <LinearLayout
@@ -141,12 +137,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@fraction/edit_text_hint"
+            android:autofillHints="0.00"
             android:ems="10"
-            android:textSize="20sp"
             android:inputType="numberDecimal"
-            tools:ignore="LabelFor"
-            android:autofillHints="Enter the values e.g 0.45" />
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <Button
