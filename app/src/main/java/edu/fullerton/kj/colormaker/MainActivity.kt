@@ -1,15 +1,19 @@
 package edu.fullerton.kj.colormaker
 
+import android.graphics.Color.rgb
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
     private lateinit var resetButton: Button
+    private lateinit var colorView: View
     private lateinit var redSwitch: SwitchCompat
     private lateinit var greenSwitch: SwitchCompat
     private lateinit var blueSwitch: SwitchCompat
@@ -19,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var redEditText: EditText
     private lateinit var greenEditText: EditText
     private lateinit var blueEditText: EditText
+    private lateinit var headerText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +36,15 @@ class MainActivity : AppCompatActivity() {
         redSeekBarCallback()
         greenSeekBarCallback()
         blueSeekBarCallback()
+        redSeekBar.isEnabled = false
+        greenSeekBar.isEnabled = false
+        blueSeekBar.isEnabled = false
     }
 
     private fun connectViewPointers() {
         resetButton = this.findViewById(R.id.reset_button)
+        headerText = this.findViewById(R.id.header_text)
+        colorView = this.findViewById(R.id.color_view)
         redSwitch = this.findViewById(R.id.red_switch)
         redSeekBar = this.findViewById(R.id.red_seekBar)
         redEditText = this.findViewById(R.id.red_editTextNumberDecimal)
@@ -103,12 +113,18 @@ class MainActivity : AppCompatActivity() {
     var newValue: Double = 0.00
     var startNum = 0
     var endNum = 0
+    var colorRed = 0
+    var colorBlue = 0
+    var colorGreen = 0
     private fun redSeekBarCallback() {
         redSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 newValue = p1*rescaledValue
                 val roundOffValue = (newValue * 100.0).roundToInt() / 100.0
                 redEditText.setText(roundOffValue.toString())
+                colorRed = p1
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -127,6 +143,9 @@ class MainActivity : AppCompatActivity() {
                 newValue = p1*rescaledValue
                 val roundOffValue = (newValue * 100.0).roundToInt() / 100.0
                 greenEditText.setText(roundOffValue.toString())
+                colorGreen = p1
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -145,6 +164,9 @@ class MainActivity : AppCompatActivity() {
                 newValue = p1*rescaledValue
                 val roundOffValue = (newValue * 100.0).roundToInt() / 100.0
                 blueEditText.setText(roundOffValue.toString())
+                colorBlue = p1
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
