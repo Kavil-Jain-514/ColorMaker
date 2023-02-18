@@ -24,6 +24,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var greenEditText: EditText
     private lateinit var blueEditText: EditText
     private lateinit var headerText: TextView
+    var rescaledValue = 0.00392156862
+    var newValue: Double = 0.00
+    var startNum = 0
+    var endNum = 0
+    var colorRed = 0
+    var colorBlue = 0
+    var colorGreen = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,8 +86,13 @@ class MainActivity : AppCompatActivity() {
                 redSeekBar.isEnabled = true
                 redEditText.isEnabled = true
             } else {
+                redSeekBar.progress = 0
                 redSeekBar.isEnabled = false
                 redEditText.isEnabled = false
+                colorRed = 0
+                redEditText.setText((0.0).toString())
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
         }
     }
@@ -91,8 +103,13 @@ class MainActivity : AppCompatActivity() {
                 greenSeekBar.isEnabled = true
                 greenEditText.isEnabled = true
             } else {
+                greenSeekBar.progress = 0
                 greenSeekBar.isEnabled = false
                 greenEditText.isEnabled = false
+                colorGreen = 0
+                greenEditText.setText((0.0).toString())
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
         }
     }
@@ -103,24 +120,22 @@ class MainActivity : AppCompatActivity() {
                 blueSeekBar.isEnabled = true
                 blueEditText.isEnabled = true
             } else {
+                blueSeekBar.progress = 0
                 blueSeekBar.isEnabled = false
                 blueEditText.isEnabled = false
+                colorBlue = 0
+                blueEditText.setText((0.0).toString())
+                colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
+                headerText.setTextColor(rgb(colorRed,colorGreen,colorBlue))
             }
         }
     }
 
-    var rescaledValue = 0.00392156862
-    var newValue: Double = 0.00
-    var startNum = 0
-    var endNum = 0
-    var colorRed = 0
-    var colorBlue = 0
-    var colorGreen = 0
     private fun redSeekBarCallback() {
         redSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 newValue = p1*rescaledValue
-                val roundOffValue = (newValue * 100.0).roundToInt() / 100.0
+                val roundOffValue = (newValue * 1000.0).roundToInt() / 1000.0
                 redEditText.setText(roundOffValue.toString())
                 colorRed = p1
                 colorView.setBackgroundColor(rgb(colorRed,colorGreen,colorBlue))
